@@ -1,12 +1,16 @@
 import React from 'react';
 
-import HeadlineHooks from './HeadelineHooks';
+import HeadlineHooks from './HeadlineHooks';
 import HeadlineHooks2 from './HeadlineHooks2';
 
 function App() {
+
+ 
+
+
   return (
     <div>
-      <HeadlineHooks/>
+      <HeadlineHooks />
       <HeadlineHooks2 />
 
     </div>

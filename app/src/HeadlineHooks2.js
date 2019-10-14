@@ -10,31 +10,31 @@ const inputStyles2 = {...inputStyles, ...alignStyles, ... {border: '4px solid or
 
 const HeadlineHooks2 = () => {
 
-    const [greeting, setGreetingInput] = useState('Another Default State Greeting')    
+    const [greeting3, setGreetingInput3] = useState('3rd Default State Greeting')    
     
-    const _handleInputs = (ev) => setGreetingInput(
-        ev.targetValue
+    const _handleInputs3 = (ev) => setGreetingInput3(
+        ev.target.value
         
         );
 
     return (
-        <HeadlineFC headline = {greeting} onChangeHeadline = {_handleInputs} />    
+        <HeadlineFC headline = {greeting3} onChangeHeadline = {_handleInputs3} />    
     )
 }
 
 const HeadlineFC = ({headline, onChangeHeadline}) => (
     <div >
-    <Header style = {headerStyles}> {headline}</Header>
+        <Header style = {headerStyles}> {headline}</Header>
 
-    <Input
-        label="Input Text"
-        placeholder="Placeholder text"
-        type="text"
-        style = {inputStyles2}
-        value = {headline}
-        onChange={onChangeHeadline}
-    />
-</div>
+        <Input
+            label="Input Text"
+            placeholder="Placeholder text"
+            type="text"
+            style = {inputStyles2}
+            value = {headline}
+            onChange={onChangeHeadline}
+        />
+    </div>
 
 )
 

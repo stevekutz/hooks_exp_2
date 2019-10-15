@@ -17,7 +17,7 @@ const HeadlineHooks2 = () => {
         
         );
 
-    useEffect( () => {console.log('useEffect ran n 2nd state') });    
+    useEffect( () => {console.log('useEffect ran on 2nd state') });    
 
 
 

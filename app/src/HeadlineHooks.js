@@ -19,8 +19,8 @@ const HeadlineHooks = () => {
         ev.target.value       
         );
 
-    useEffect( () => randomHsl , [greeting, greeting2] ); 
-
+        useEffect( () => {console.log('useEffect invoked ONLY on first input') }, [greeting]); 
+        useEffect( () => {console.log('useEffect invoked ONLY on 2nd & 3rd input') }, [greeting2]); 
 
     return (
         
@@ -40,7 +40,7 @@ const HeadlineHooks = () => {
                 />
 
                 <Input
-                    label="ev passed inline to setGreetingInput"
+                    label="ev passed inline to c"
                     placeholder="Placeholder text"
                     type="text"
                     style = {inputStyles2}
@@ -51,7 +51,7 @@ const HeadlineHooks = () => {
                 />
 
                 <Input
-                    label="handler directly called"
+                    label="setGreetingInput2 handler directly called"
                     placeholder="Placeholder text"
                     type="text"
                     style = {inputStyles2}

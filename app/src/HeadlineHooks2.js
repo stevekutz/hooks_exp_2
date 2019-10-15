@@ -1,4 +1,4 @@
-import React, {Fragment , useState, useEffects} from 'react';
+import React, {Fragment , useState, useEffect} from 'react';
 import {Card, Container, Header} from 'semantic-ui-react';
 import {Input} from 'react-rainbow-components';
 
@@ -10,12 +10,16 @@ const inputStyles2 = {...inputStyles, ...alignStyles, ... {border: '4px solid or
 
 const HeadlineHooks2 = () => {
 
-    const [greeting3, setGreetingInput3] = useState('3rd Default State Greeting')    
+    const [greeting3, setGreetingInput3] = useState('2nd Default State Greeting')    
     
     const _handleInputs3 = (ev) => setGreetingInput3(
         ev.target.value
         
         );
+
+    useEffect( () => {console.log('useEffect ran n 2nd state') });    
+
+
 
     return (
         <HeadlineFC headline = {greeting3} onChangeHeadline = {_handleInputs3} />    

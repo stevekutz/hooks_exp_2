@@ -1,5 +1,5 @@
 import React, {Fragment , useState, useEffect} from 'react';
-import {Card, Container, Header} from 'semantic-ui-react';
+import {Card, Container, Header, Label} from 'semantic-ui-react';
 import {Input} from 'react-rainbow-components';
 
 const HeadlineHooks = () => {
@@ -16,9 +16,7 @@ const HeadlineHooks = () => {
     const inputStyles2 = {...inputStyles, ...alignStyles, ...{border: '4px solid seagreen'}, alignItems: 'stretch' }
     const borderStyle = {border: `10px solid ${randomHsl()} `, display: 'flex'}
 
-    const _handleInputs = (ev) => setGreetingInput2(
-        ev.target.value       
-        );
+    const _handleInputs = (ev) => setGreetingInput2( ev.target.value );
 
     useEffect( () => {console.log('useEffect invoked ONLY on first input') }, [greeting]); 
     useEffect( () => {console.log('useEffect invoked ONLY on 2nd & 3rd input') }, [greeting2]); 
@@ -26,9 +24,10 @@ const HeadlineHooks = () => {
 
     return (
         <Fragment>
-            <p style = {{backgroundColor: `  ${randomHsl()}   `, textAlign: 'center'}}> useEffect only changes on specific state variable !</p>
+          <p style = {{backgroundColor: `  ${randomHsl()}   `, textAlign: 'center', fontWeight: 'bold'}}> useEffect only changes on specific state variable !</p>
+
             <div style = {borderStyle}>
-                <div style = {{width: '10%', height: '350px', backgroundColor: `${randomColor}`}}></div>
+                <div style = {{width: '10%', height: '455px', backgroundColor: `${randomColor}`}}></div>
                 <div style = {{width: '80%'}}>
                     <Header style = {headerStyles}> {greeting}</Header>
                     <Header style = {headerStyles}> {greeting2}</Header>
@@ -49,7 +48,6 @@ const HeadlineHooks = () => {
                         style = {inputStyles2}
                         size = 'mini'
                         value = {greeting2}
-                        // onChange={(ev) => _handleInputs(ev)}  
                         onChange={ev => setGreetingInput2(ev.target.value)}
                     />
 
@@ -61,8 +59,18 @@ const HeadlineHooks = () => {
                         value = {greeting2}
                         onChange={_handleInputs}     
                     />
+
+                    <Input
+                        label="setGreetingInput2 handler directly called with passed in ev"
+                        placeholder="Placeholder text"
+                        type="text"
+                        style = {inputStyles2}
+                        value = {greeting2}
+                        onChange={(ev) => _handleInputs(ev)}     
+                    />
+
                 </div>
-                <div style = {{width: '10%', height: '350px', backgroundColor: `${randomColor}`}}></div>
+                <div style = {{width: '10%', height: '455px', backgroundColor: `${randomColor}`}}></div>
             </div>
         </Fragment>
     )
